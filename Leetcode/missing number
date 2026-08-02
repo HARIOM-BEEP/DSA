@@ -1,0 +1,16 @@
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int n = nums.size();
+        int p=n*(n+1)/2;
+        int k=0;
+        int m=0;
+        for(int i=0; i<n; i++){
+            k=k+nums[i];
+            
+        }
+        if(p-k!=0) return p-k;
+        else return m; 
+    }
+};
