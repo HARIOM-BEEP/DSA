@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int product(int num){
+        if(num==0){
+            return num;
+        }
+        int ld =0, product =1;
+        while(num!=0){
+            ld = num%10;
+            product = product*ld;
+            num /=10;
+        }
+        return product;
+    }
+
+    int smallestNumber(int n, int t) {
+        int k=n;
+        for(int i=k; i>=k; i++){
+            if(product(i)%t==0) return i;
+            
+        }
+        return 0;
+    }
+};
