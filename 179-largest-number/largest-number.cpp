@@ -1,27 +1,27 @@
+
 class Solution {
 public:
     string largestNumber(vector<int>& nums) {
-        int n=nums.size();
-        vector<string> s;
-        int k=0;
-        string ans;
-        string str;
-        
+        int n = nums.size();
+        string s[100];
 
-        for (int i = 0; i < nums.size(); i++) {
-            s.push_back(to_string(nums[i]));
+        for (int i = 0; i < n; i++) {
+            s[i] = to_string(nums[i]);
         }
-        sort(s.begin(), s.end(), [](string a, string b) {
+
+        // Arrange numbers by comparing concatenations
+        sort(s, s + n, [](string a, string b) {
             return a + b > b + a;
         });
 
+        string ans = "";
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < s[i].size(); j++) {
-                ans.push_back(s[i][j]);
-            }
+            ans += s[i];
         }
+
+        // Handle cases like [0, 0]
         if (ans[0] == '0') return "0";
-        
+
         return ans;
     }
 };
