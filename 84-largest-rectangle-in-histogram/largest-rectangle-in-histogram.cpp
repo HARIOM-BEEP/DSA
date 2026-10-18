@@ -32,9 +32,9 @@ public:
         }
 
         int mx=0;
-        int sum=0;
+        
         for(int i=0; i<n; i++){
-            sum=heights[i]*(b[i]-f[i]-1);
+            int sum=heights[i]*(b[i]-f[i]-1);
             if(sum>mx) mx=sum;
         }
         return mx;
