@@ -17,8 +17,6 @@ public:
     }
     
     void pop() {
-        if (st.empty()) return;
-
         if (st.top() == mn) {
             ht.pop();
         }
